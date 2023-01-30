@@ -1,0 +1,17 @@
+
+<nav>
+  <a routerLink="/">
+    Home
+  </a>
+  <a
+    *ngFor="let crumb of service.crumbs$ | async"
+    [routerLink]="crumb.route"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLinkActive="active">
+      {{ crumb.label || crumb.urlSegment }}
+  </a>
+</nav>
+
+<pre>{{ service.crumbs$ | async | json }}</pre>
+
+{{ router.url }}

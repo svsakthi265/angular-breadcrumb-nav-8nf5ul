@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  border: 1px solid red;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not(:last-child)::after {
+  content: '\00BB';
+}
+
+.active {
+  color: #222222;
+}
